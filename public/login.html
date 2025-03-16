@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIMS - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">SWIMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="more-info.html">More Info</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="container fade-in">
+        <h1>SWIMS Login</h1>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <label for="companyCode">Company Code:</label>
+            <input type="text" id="companyCode" name="companyCode" placeholder="Enter your company code" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p class="register-link">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <!-- Copyright Footer -->
+    <footer>
+        <p>&copy; 2025 SWIMS. All rights reserved.</p>
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

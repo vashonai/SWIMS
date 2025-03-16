@@ -1,0 +1,282 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Background Setup */
+body {
+    background: url('../assets/warehouse-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ff7f50; /* Burnt Orange */
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 8px 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    background: #ff7f50; /* Burnt Orange */
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 70px; /* Adjusted for fixed navbar */
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #f5f5f5;
+}
+
+/* Sections Styling */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #ff7f50; /* Burnt Orange */
+}
+
+/* Info Section Containers */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.info-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.info-box h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.info-box p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #e0e0e0;
+}
+
+/* Benefits Section */
+.benefit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.benefit-box {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.benefit-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.benefit-box i {
+    font-size: 3rem;
+    color: #0b3d91; /* Dark Blue */
+    margin-bottom: 15px;
+}
+
+.benefit-box h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Call-to-Action Section */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 127, 80, 0.2); /* Burnt Orange */
+    border-radius: 20px;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #0b3d91; /* Dark Blue */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ff7f50; /* Burnt Orange */
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .info-box, .benefit-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+    }
+}

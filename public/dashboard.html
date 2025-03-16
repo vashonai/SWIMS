@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIMS - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <h2>SWIMS</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="inventory.html"><i class="fas fa-boxes"></i> Inventory</a></li>
+            <li><a href="Analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+            <li><a href="Settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <i class="fas fa-box"></i>
+                <h3>Stock Levels</h3>
+                <p>1,250 Items</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-truck"></i>
+                <h3>Incoming Shipments</h3>
+                <p>5 In Transit</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>Orders Processed</h3>
+                <p>87 Today</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>Active Users</h3>
+                <p>12 Online</p>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Inventory Analytics</h2>
+            <div class="chart-container">
+                <canvas id="inventoryChart"></canvas>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 SWIMS. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

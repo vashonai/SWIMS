@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIMS - Inventory</title>
+    <link rel="stylesheet" href="css/inventory.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Sidebar with Hamburger Menu -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="SWIMS Logo" style="width: 100px; height: auto;">
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="inventory.html"><i class="fas fa-boxes"></i> Inventory</a></li>
+            <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+            <li><a href="settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Inventory</h1>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+
+        <div class="inventory-controls">
+            <input type="text" id="search-bar" placeholder="Search Inventory" class="search-bar">
+            <button class="search-btn" id="search-btn"><i class="fas fa-search"></i> Search</button>
+            <button class="add-item-btn" id="add-item-btn"><i class="fas fa-plus"></i> Add Item</button>
+        </div>
+
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Stock Level</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aluminum Sheet</td>
+                    <td>Aluminum</td>
+                    <td>120</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Aluminum Bar</td>
+                    <td>Aluminum</td>
+                    <td>90</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Steel Beam</td>
+                    <td>Steel</td>
+                    <td>75</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Copper Wire</td>
+                    <td>Copper</td>
+                    <td>50</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Brass Sheet</td>
+                    <td>Brass</td>
+                    <td>130</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Aluminum Plate</td>
+                    <td>Aluminum</td>
+                    <td>200</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Steel Rod</td>
+                    <td>Steel</td>
+                    <td>80</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Copper Coil</td>
+                    <td>Copper</td>
+                    <td>60</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Brass Pipe</td>
+                    <td>Brass</td>
+                    <td>40</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Aluminum Extrusion</td>
+                    <td>Aluminum</td>
+                    <td>180</td>
+                    <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <p>&copy; 2025 SWIMS. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/inventory.js"></script>
+</body>
+</html>

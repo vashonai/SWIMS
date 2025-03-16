@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIMS - Analytics</title>
+    <link rel="stylesheet" href="css/analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="SWIMS Logo" class="logo-img">
+            <h2 style="color: #FF6600;">S.W.I.M.S.</h2>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="inventory.html"><i class="fas fa-boxes"></i> Inventory</a></li>
+            <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+            <li><a href="settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Analytics</h1>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section class="overview-section">
+            <div class="overview-card">
+                <h3>Total Items</h3>
+                <p id="total-items">500</p>
+            </div>
+            <div class="overview-card">
+                <h3>Items Sold</h3>
+                <p id="items-sold">320</p>
+            </div>
+            <div class="overview-card">
+                <h3>Items in Stock</h3>
+                <p id="items-in-stock">180</p>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <h3>Item Category Distribution</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Monthly Sales Trend</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Data Table -->
+        <section class="data-table-section">
+            <h3>Top 10 Best Selling Items</h3>
+            <table id="sales-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Sold</th>
+                        <th>Stock Remaining</th>
+                        <th>Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 SWIMS. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/analytics.js"></script>
+</body>
+</html>
