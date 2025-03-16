@@ -9,53 +9,44 @@ async function handleLogin(event) {
     const password = document.getElementById("password").value.trim();
     const submitButton = document.querySelector(".btn");
 
-    // Validate company code and password
-    if (!companyCode) {
-        showAlert("Please enter your company code.", "error");
+    if (!companyCode || !password) {
+        showAlert("Please enter both company code and password.", "error");
         return;
     }
 
-    if (!password) {
-        showAlert("Please enter your password.", "error");
-        return;
-    }
-
-    // Disable button to prevent multiple submissions
     submitButton.disabled = true;
-    submitButton.textContent = "Processing...";
+    submitButton.textContent = "Logging in...";
 
     try {
-        // Make an API call to your backend for login validation
-        const response = await fetch('http://localhost:5001/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ companyCode, password })
+        const response = await fetch("http://localhost:5001/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ company_code: companyCode, password })
         });
 
         const data = await response.json();
 
-        if (response.status === 200) {
-            showAlert(data.message, "success");
+        if (response.ok) {
+            showAlert("Login successful! Redirecting...", "success");
 
-            // Redirect to dashboard after successful login
+            // Store token in localStorage
+            localStorage.setItem("token", data.token);
+
             setTimeout(() => {
                 window.location.href = "dashboard.html";
-            }, 2000);
+            }, 1500);
         } else {
-            showAlert(data.message, "error");
-            submitButton.disabled = false;
-            submitButton.textContent = "Login";
+            showAlert(data.error || "Login failed. Try again.", "error");
         }
-    } catch (err) {
-        showAlert("An error occurred. Please try again.", "error");
+    } catch (error) {
+        showAlert("Server error. Please try again later.", "error");
+    } finally {
         submitButton.disabled = false;
         submitButton.textContent = "Login";
     }
 }
 
-// Function to show custom alerts
+// Function to show alerts
 function showAlert(message, type) {
     let alertBox = document.createElement("div");
     alertBox.className = `alert ${type}`;
