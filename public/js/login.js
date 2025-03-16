@@ -1,37 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("signupForm").addEventListener("submit", handleSubmit);
+    document.getElementById("loginForm").addEventListener("submit", handleLogin);
 });
 
-function handleSubmit(event) {
+async function handleLogin(event) {
     event.preventDefault();
 
-    const companyName = document.getElementById("companyName").value.trim();
     const companyCode = document.getElementById("companyCode").value.trim();
-    const emailVerification = document.getElementById("emailVerification").value.trim();
     const password = document.getElementById("password").value.trim();
     const submitButton = document.querySelector(".btn");
 
-    // Email validation regex pattern
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    // Validation Checks
-    if (!companyName) {
-        showAlert("Please enter your company name.", "error");
-        return;
-    }
-
+    // Validate company code and password
     if (!companyCode) {
-        showAlert("Please enter a valid company code.", "error");
+        showAlert("Please enter your company code.", "error");
         return;
     }
 
-    if (!emailPattern.test(emailVerification)) {
-        showAlert("Please enter a valid email address.", "error");
-        return;
-    }
-
-    if (password.length < 6) {
-        showAlert("Password must be at least 6 characters long.", "error");
+    if (!password) {
+        showAlert("Please enter your password.", "error");
         return;
     }
 
@@ -39,12 +24,35 @@ function handleSubmit(event) {
     submitButton.disabled = true;
     submitButton.textContent = "Processing...";
 
-    showAlert(`Welcome, ${companyName}! Registration successful.`, "success");
+    try {
+        // Make an API call to your backend for login validation
+        const response = await fetch('http://localhost:5001/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ companyCode, password })
+        });
 
-    // Simulate form submission delay for UX improvement
-    setTimeout(() => {
-        window.location.href = "dashboard.html"; // Redirect to dashboard
-    }, 2000);
+        const data = await response.json();
+
+        if (response.status === 200) {
+            showAlert(data.message, "success");
+
+            // Redirect to dashboard after successful login
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 2000);
+        } else {
+            showAlert(data.message, "error");
+            submitButton.disabled = false;
+            submitButton.textContent = "Login";
+        }
+    } catch (err) {
+        showAlert("An error occurred. Please try again.", "error");
+        submitButton.disabled = false;
+        submitButton.textContent = "Login";
+    }
 }
 
 // Function to show custom alerts
